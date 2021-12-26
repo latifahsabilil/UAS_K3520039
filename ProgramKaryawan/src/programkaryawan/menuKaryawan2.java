@@ -39,13 +39,14 @@ public class menuKaryawan2 extends menuKaryawan {
             menu.get(nilai).display();
         }
     }
+    
     public void display(){
         System.out.println("===================================");
         System.out.println("DATA KARYAWAN");
         System.out.println("----------------------------------------------------------------------------------------------------------------------");
-        System.out.println("KODE" + "\t" + "NAMA" + "\t"+ "GOL"+ "\t"+  "USIA"+ "\t" + "STATUS NIKAH" + "\t" + "JUMLAH ANAK");
+        System.out.println("KODE    NAMA    GOL    USIA    STATUS NIKAH    JUMLAH ANAK");
         System.out.println("----------------------------------------------------------------------------------------------------------------------");
-
+        
         for(int i=0; i <menu.size(); i++){
             String Kode = menu.get(i).kode;
             String Nama = menu.get(i).nama;
@@ -62,7 +63,7 @@ public class menuKaryawan2 extends menuKaryawan {
             }
             
             
-            System.out.println(Kode + "\t" + Nama + "\t"+ Golongan+ "\t"+ Usia+"\t"+ Status +"\t"+ anak );
+            System.out.println(Kode + "    " + Nama + "    " + Golongan+ "    " + Usia+"    " + Status + "    " + anak );
         }
         
         System.out.println("----------------------------------------------------------------------------------------------------------------------");
