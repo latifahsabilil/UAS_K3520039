@@ -13,6 +13,5 @@ public abstract class menuKaryawan {
    abstract public void tambah(DataKaryawan dataK);
    abstract public void hapus(String kode);
    abstract public void cari(String kode);
-   abstract public void display();
    
 }
