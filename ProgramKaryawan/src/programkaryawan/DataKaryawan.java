@@ -13,9 +13,9 @@ import java.time.LocalDate;
 
 public class DataKaryawan {
     //tanggal
-    private int dd;
-    private int mm;
-    private int yy;
+    public int dd;
+    public int mm;
+    public int yy;
     
     // karyawan
     public String kode;
@@ -80,11 +80,9 @@ public class DataKaryawan {
                 break;
         }
         // tunjangan sudah menikah
-        switch(status){
-            case 1 :
+        if(statPas == true){
                 this.tPasangan = gajiPokok / 10;
                 this.statPas = true;
-                break;
         }
         
         //tunjangan memiliki anak
@@ -106,13 +104,9 @@ public class DataKaryawan {
                 break;
         }
         
-        //Gaji Kotor
+        //Gaji Kotor, potongan, gaji bersih
         this.gajiKotor = gajiPokok + tPegawai + tPasangan + tAnak;
-        
-        // potongan
         this.potongan = (gajiKotor * 25)/100;
-        
-        //Gaji Bersih
         this.gajiBersih = gajiKotor - potongan;
     }
     
@@ -137,6 +131,7 @@ public class DataKaryawan {
         }
         System.out.println("Gaji Pokok     : Rp. " + this.gajiPokok );
         
+        // tunjangan
         if(statPas){
             System.out.println("Tunjangan Suami/Istri : Rp. " + this.tPasangan);
         }
