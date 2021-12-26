@@ -16,31 +16,31 @@ public class ProgramKaryawan {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
+        boolean pilihMenu = true;
         menuKaryawan2 menuK = new menuKaryawan2();
         
-        boolean pilihMenu = true;
-        
-         while(pilihMenu){    
+        while(pilihMenu){    
             System.out.println("===================================");
             System.out.println("Menu Utama");
             System.out.println("----------------------------------------------------------------------------------------------------------------------");
-            System.out.println("1.Tambah data");
-            System.out.println("2.Hapus Data");
-            System.out.println("3.Cari Data");
-            System.out.println("4.Lihat Data");
-            System.out.println("5.Exit");
+            System.out.println("1. Tambah data");
+            System.out.println("2. Hapus Data");
+            System.out.println("3. Cari Data");
+            System.out.println("4. Lihat Data");
+            System.out.println("5. Exit");
             System.out.println("----------------------------------------------------------------------------------------------------------------------");
             
             Scanner input = new Scanner( System.in );
             System.out.print("Menu pilihan: ");
-            int Pilih = input.nextInt();
             
+            int Pilih = input.nextInt();
+            boolean Tambah = true;
+            boolean Hapus = true;
+            boolean Cari = true;
+            boolean Display = true;
             switch(Pilih){
                 case 1 : 
-                    
-                    boolean Tambah = true;
-                    while( Tambah ){
+                    while(Tambah){
                         System.out.println("");
                         System.out.println("===================================");
                         System.out.println("Menu Tambah Data");
@@ -61,8 +61,8 @@ public class ProgramKaryawan {
                         System.out.println("");
                         
                         System.out.println("Masukan Status Menikah");
-                        System.out.println("0.belum");
-                        System.out.println("1.menikah");
+                        System.out.println("0. Belum");
+                        System.out.println("1. Menikah");
                         System.out.print("Status Karyawan                   : ");
                         int status = input.nextInt();
                         int nAnak;
@@ -74,40 +74,29 @@ public class ProgramKaryawan {
                             nAnak = 0;
                         }
                         
-                        DataKaryawan dataK = new DataKaryawan(
-                                Kode,
-                                Nama,
-                                Alamat,
-                                Lahir,
-                                Golongan,
-                                status,
-                                nAnak
-                        );
-                        
+                        DataKaryawan dataK = new DataKaryawan(Kode, Nama, Alamat, Lahir, Golongan, status, nAnak);  
                         menuK.tambah(dataK);
                         
                         //SUBMENU
                         System.out.println("");
                         System.out.println("----------------------------------------------------------------------------------------------------------------------");
                         System.out.println("Pilih Submenu : ");
-                        System.out.println("1 Kembali ke menu utama");
-                        System.out.println("2 Tambah Data Kembali");
+                        System.out.println("1. Kembali ke menu utama");
+                        System.out.println("2. Tambah Data Kembali");
                         System.out.println("");
                         System.out.print("Menu Pilihan : ");
                         
                         int pilih = input.nextInt();
-                        if( pilih == 1 ){
+                        if(pilih == 1){
                             Tambah = false;
-                        }else if(pilih != 2) {
-                            System.out.println("pilihan sub menu tidak ada");
-                        }  
+                        }
                     }
                     break;
 
                 
                     
                 case 2 : 
-                    boolean Hapus = true;
+                    
                     while(Hapus) {
                         System.out.println("");
                         System.out.println("===================================");
@@ -124,23 +113,21 @@ public class ProgramKaryawan {
                         System.out.println("");
                         System.out.println("----------------------------------------------------------------------------------------------------------------------");
                         System.out.println("Pilih Submenu : ");
-                        System.out.println("1 Kembali ke menu utama");
+                        System.out.println("1. Kembali ke menu utama");
                         System.out.println("");
                         System.out.print("Menu Pilihan : ");
                         
                         int pilih = input.nextInt();
-                        if( pilih == 1 ){
+                        if(pilih == 1){
                             Hapus = false;
-                        }else if(pilih != 2) {
-                            System.out.println("pilihan sub menu tidak ada");
-                        } 
+                        }
                         
                     }
                     break;
 
                 
                 case 3 :                     
-                    boolean Cari = true;
+                    
                     while(Cari){
                         System.out.println("");
                         System.out.println("===================================");
@@ -157,41 +144,35 @@ public class ProgramKaryawan {
                         System.out.println("");
                         System.out.println("----------------------------------------------------------------------------------------------------------------------");
                         System.out.println("Pilih Submenu : ");
-                        System.out.println("1 Kembali ke menu utama");
+                        System.out.println("1. Kembali ke menu utama");
                         System.out.println("");
                         System.out.print("Menu Pilihan : ");
                         
                         int pilih = input.nextInt();
-                        if( pilih == 1 ){
+                        if(pilih == 1 ){
                             Cari = false;
-                        }else if(pilih != 2) {
-                            System.out.println("pilihan sub menu tidak ada");
-                        } 
+                        }
                     }
                     break;
 
                 
                 case 4 : 
-                    boolean Display = true;
-                    while( Display ){
-                        menuK.display();
-                        
+                    
+                    while(Display){
+                        menuK.display();                        
                         
                         //SUBMENU
                         System.out.println("");
                         System.out.println("----------------------------------------------------------------------------------------------------------------------");
                         System.out.println("Pilih Submenu : ");
-                        System.out.println("1 Kembali ke menu utama");
-                        System.out.println("2 Tambah Data Kembali");
+                        System.out.println("1. Kembali ke menu utama");
                         System.out.println("");
                         System.out.print("Menu Pilihan : ");
                         
                         int pilih = input.nextInt();
-                        if( pilih == 1 ){
+                        if(pilih == 1){
                             Display = false;
-                        }else if(pilih != 2) {
-                            System.out.println("pilihan sub menu tidak ada");
-                        } 
+                        }
                     }
                     break;
 
